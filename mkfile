@@ -6,10 +6,8 @@ FASTQC_TARGETS=`{find -L data/ -name '*.fastq' -o -name '*.fastq.gz' \
 
 fastqc:V: $FASTQC_TARGETS
 
-results/fastqc/%_fastqc.html:	data/%.fastq.gz
-	DIR=`dirname $target`
-	mkdir -p $DIR
-	fastqc $prereq -o $DIR
+data/%.fastq:	data/%.fastq.gz
+	gzip -d -c $prereq > $target
 
 results/fastqc/%_fastqc.html:	data/%.fastq
 	DIR=`dirname $target`
