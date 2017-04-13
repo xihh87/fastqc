@@ -12,3 +12,5 @@ The reports will be output to `results/` folder.
 
 - fastqc
 - coreutils
+- find
+- 9base
