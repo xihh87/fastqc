@@ -1,0 +1,5 @@
+#!/bin/sh
+awk '/>>Per base sequence quality/,/>>END_MODULE/' \
+	"$@" \
+| tail -n +2 \
+| head -n -1
