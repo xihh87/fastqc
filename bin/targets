@@ -1,6 +1,1 @@
-#!/bin/sh
-find -L data \
-	-name '*.fq.gz' \
-| sed -r \
-	-e 's#^data/#results/#g' \
-	-e 's#\.fq(\.gz)?$#_fastqc.html#g'
+targets-fastqc-statistics
